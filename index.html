@@ -33,12 +33,12 @@
   <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Piedra&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="shortcut icon" type="image/png" href="assets/img/tu1 - Chaien.png">
 
 </head>
 
-<body>
+<body id="turn">
 
 <!--  hero-->
     <div class="hero">
@@ -82,7 +82,8 @@
             </ul>
           </li>
           <li><a style="cursor:pointer;color:white" onclick="openNav()"> Đăng ký ngay</a></li>
-          <li><a style="cursor:pointer;color:white" onclick="openNav2()"> Đăng nhập</a></li>
+          <li><a style="cursor:pointer;color:white"  onclick="openNav2()"> Đăng nhập</a></li>
+          <li><p id="hvn"></p></li>
         </ul>
       </nav>
       <div id="dangnhap">
@@ -114,10 +115,29 @@
           </div>
         </div>
       </div>
-      <nav class="nav social-nav pull-right d-none d-lg-inline">
+      <div class="boxex">
+        <button type="submit"onclick="openNav4()"> <i class="fa fa-search"></i></button>
+        <div class="example">
+          <div id="myNav4" class="overlay4">
+            <div class="overlay4-content">
+              <a href="javascript:void(0)" class="closebtn4" onclick="closeNav4()">&times;</a>
+              <input id="sre" type="text" placeholder="Search.." name="search2">
+            </div>
+          </div>
+
+        </div>
+
+   </div>
+      <nav class="nav social-nav pull-right d-none d-lg-inline" style="position: absolute;right:10px">
         <a href="https://twitter.com/?lang=vi"><i class="fa fa-twitter"></i></a> <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a> <a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a> <a href="https://mail.google.com/"><i class="fa fa-envelope"></i></a>
       </nav>
     </div>
+    <label class="switch">
+      <input type="checkbox" onclick="turnon()">
+      <span class="slider"></span>
+    </label>
+    
+    
   </header>
   <div id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -286,12 +306,42 @@ VTL tự hào trở thành đơn vị đào tạo Anh ngữ đạt tiêu chuẩn
 <!--	  end about-->
 
 <!--    welcome-->
-    <section class="welcome text-center" id="khoanhkhac">
-      <h2>Những khoảng khắc cùng VTL</h2>
-      <p>
-        Tại VTL giáo viên được tuyển chọn kỹ lưõng, đảm bảo chất lượng giảng dạy, </br> nhiều cấp độ cho mọi độ tuổi giúp các bạn học tiếng anh xuyên suốt
-      </p>
-    </section>
+<section class="welcome text-center" id="khoanhkhac">
+
+      <div class="slideshow-container">
+
+        <div class="mySlides fade" style="opacity: 1;">
+          <div class="text">  <h2>Những khoảng khắc cùng VTL</h2>
+            <p>
+              Tại VTL giáo viên được tuyển chọn kỹ lưõng, đảm bảo chất lượng giảng dạy, </br> nhiều cấp độ cho mọi độ tuổi giúp các bạn học tiếng anh xuyên suốt
+            </p></div>
+          <img src="assets/img/tt1.jpeg" style="width:100%;">
+        </div>
+        
+        <div class="mySlides fade"style="opacity: 1;">
+          <img src="assets/img/tt2.jpg" style="width:100%">
+          <div class="text">  <h2>Những khoảng khắc cùng VTL</h2>
+            <p>
+              Tại VTL giáo viên được tuyển chọn kỹ lưõng, đảm bảo chất lượng giảng dạy, </br> nhiều cấp độ cho mọi độ tuổi giúp các bạn học tiếng anh xuyên suốt
+            </p></div>
+        </div>
+        
+        <div class="mySlides fade"style="opacity: 1;">
+          <img src="assets/img/tt3.jpg" style="width:100%">
+          <div class="text">  <h2>Những khoảng khắc cùng VTL</h2>
+            <p>
+              Tại VTL giáo viên được tuyển chọn kỹ lưõng, đảm bảo chất lượng giảng dạy, </br> nhiều cấp độ cho mọi độ tuổi giúp các bạn học tiếng anh xuyên suốt
+            </p></div>
+        </div>
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+</section>
 <!--	   end wc-->
 
 
@@ -641,13 +691,58 @@ function closeNav2() {
   document.getElementById("dangnhap").style.top = "-300px";
   document.getElementById("dangnhap").style.left = "400px";
 }
+
+function openNav4() {
+  document.getElementById("myNav4").style.width="100%"
+  document.getElementById("myNav4").style.height="33px"
+
+}
+
+function closeNav4() {
+  document.getElementById("myNav4").style.width = "0%";
+  document.getElementById("myNav4").style.height = "0%";
+}
+
 function openQMK() {
  document.getElementById("anhmau").style.display="none";
   document.getElementById("dangnhapfb").style.width = "185px";
   document.getElementById("dangnhapfb").style.height = "35px";
   document.getElementById("dangnhapfb").style.display = "block";
 }
+function turnon(){
+  var element=document.body;
+  element.classList.toggle("dark-mode")
+}
+/*var today = new Date();
+  if(today.getHours()>=19 ||today.getHours()<=7)
+  {
+    document.getElementById("turn").style.backgroundColor="#000000";
+    document.getElementById("turn").style.color.p="#ffff"
+  }
+   document.getElementById("hvn").innerHTML = dateTime;*/
     </script>
+      <script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 5000); // Change image every 2 seconds
+        }
+        </script>
+      
     		<script type="text/javascript" src="assets/js/form.js"> </script>
 
 </body>
